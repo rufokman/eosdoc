@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class = "container">
+    <h3>Формирование документа из ЕОСДО по шаблону</h3>
+    <hr>
+    <form action="." method="post">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <p></p>
+        <button type="submit" class='btn btn-outline-info btn-block'>Отправить</button>
+
+    </form>
+    <hr>
+</div>
+
+{% endblock %}
